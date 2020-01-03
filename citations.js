@@ -41,14 +41,24 @@ function random () {
     return Math.floor(Math.random()*10);
 }
 
-let randFirst = random();
-let randSecond = random();
-let randThird = random();
+let numChoosed = 0;
+while (numChoosed <= 0 || numChoosed > 5) {
+    numChoosed = window.prompt("Combien de citations entre 1 & 5 voulez vous (default : 1)?", 1);
+    if (isNaN(numChoosed)) {
+        numChoosed = 0;
+    }
+}
 
-let firstPart = firstArray[randFirst];
-let secondPart = secondArray[randSecond];
-let thirdPart = thirdArray[randThird];
+for(var i = numChoosed; i > 0; i--) {
+    let randFirst = random();
+    let randSecond = random();
+    let randThird = random();
 
-let citation = `${firstPart} ${secondPart} ${thirdPart}`;
+    let firstPart = firstArray[randFirst];
+    let secondPart = secondArray[randSecond];
+    let thirdPart = thirdArray[randThird];
 
-console.log(citation);
+    let citation = `${firstPart} ${secondPart} ${thirdPart}`;
+
+    console.log(citation);
+}
