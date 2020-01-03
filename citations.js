@@ -26,19 +26,24 @@ const secondArray = [
 
 const thirdArray = [
     "l'amour",
-    "la mort",
     "une bonne raclette",
-    "la souris",
+    "la mort",
+    "Jackie Chan",
+    "un cerveau de souris",
     "le pied de Michelle",
     "Le Café du coin d'en bas de la rue du bout de la ville d'en face du port",
     "Le Javascript",
-    "OpenClassrooms",
     "l'année 2019",
-    "Jackie Chan"
+    "OpenClassrooms",
 ];
 
 function random () {
     return Math.floor(Math.random()*10);
+}
+
+let choice = '';
+while (choice !== 'basic' && choice !== 'foolish') {
+    choice = window.prompt("Quel mode voulez vous : Basic ou Foolish?").toLowerCase();
 }
 
 let numChoosed = 0;
@@ -49,16 +54,31 @@ while (numChoosed <= 0 || numChoosed > 5) {
     }
 }
 
-for(var i = numChoosed; i > 0; i--) {
-    let randFirst = random();
-    let randSecond = random();
-    let randThird = random();
+if (choice === 'basic') {
+    for(var i = numChoosed; i > 0; i--) {
+        let rand = random();
 
-    let firstPart = firstArray[randFirst];
-    let secondPart = secondArray[randSecond];
-    let thirdPart = thirdArray[randThird];
-
-    let citation = `${firstPart} ${secondPart} ${thirdPart}`;
-
-    console.log(citation);
+        let firstPart = firstArray[rand];
+        let secondPart = secondArray[rand];
+        let thirdPart = thirdArray[rand];
+    
+        let citation = `${firstPart} ${secondPart} ${thirdPart}`;
+    
+        console.log(citation);
+    }
+} else {
+    for(var i = numChoosed; i > 0; i--) {
+        let randFirst = random();
+        let randSecond = random();
+        let randThird = random();
+    
+        let firstPart = firstArray[randFirst];
+        let secondPart = secondArray[randSecond];
+        let thirdPart = thirdArray[randThird];
+    
+        let citation = `${firstPart} ${secondPart} ${thirdPart}`;
+    
+        console.log(citation);
+    }
 }
+
